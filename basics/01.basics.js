@@ -25,3 +25,5 @@ let empty = null;
 console.table([age, name, isLoggedIn, empty]);
 
 console.log(typeof undefined);
+
+// "use strict";
