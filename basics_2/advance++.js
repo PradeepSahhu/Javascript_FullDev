@@ -24,7 +24,7 @@ const { courseInstructor: instructor } = course;
 
 const arrs = [1, 2, 3];
 
-const [newNumber, everyNumber] = [...arrs];
+// const [newNumber, everyNumber] = [...arrs];
 // console.log(newNumber);
 // console.log(everyNumber);
 // console.log(nextNumber);
