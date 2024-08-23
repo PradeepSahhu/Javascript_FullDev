@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body style="background-color: black; color: white"></body>
+
+  <script>
+    const divElement = document.createElement("div");
+
+    // console.log(divElement);
+
+    // divElement.style.backgroundColor = "red";
+    divElement.className = "main";
+    divElement.id = 12;
+    divElement.setAttribute("title", "Pradeep sahu div");
+
+    divElement.style.backgroundColor = "red";
+    divElement.style.padding = "12px";
+
+    divElement.innerText = "something something div  ";
+    const addText = document.createTextNode("Pradeep sahu Node");
+    divElement.appendChild(addText);
+    document.body.appendChild(divElement);
+  </script>
+</html>
