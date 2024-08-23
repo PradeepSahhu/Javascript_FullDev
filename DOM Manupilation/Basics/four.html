@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit and Remove DOM</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    function addNewElement(name) {
+      const li = document.createElement("li");
+
+      const ul = document.querySelector(".language");
+
+      li.innerText = name; // whole traversing of data.
+
+      ul.appendChild(li);
+      //   console.log(li);
+    }
+    addNewElement("Python");
+    addNewElement("Java");
+    addNewElement("C++");
+    addNewElement("C");
+
+    function addElementOptimized(langName) {
+      const li = document.createElement("li");
+
+      li.appendChild(document.createTextNode(langName)); // more optimized
+
+      document.querySelector(".language").appendChild(li);
+    }
+
+    // addElementOptimized("go lang");
+
+    //edit value
+
+    const secondLang = document.querySelector("li:nth-child(2)");
+
+    //secondLang.innerText = "Go Go"; again it will traverse the whole array.
+    // secondLang.appendChild(document.createTextNode("Go Go go ")); // it will Go Go go to the end of existing text.
+
+    const newli = document.createElement("li");
+    // newli.appendChild(document.createTextNode("Go lang"));
+    newli.textContent = "MoJo";
+    secondLang.replaceWith(newli);
+
+    //edit
+
+    const firstLi = document.querySelector("li:first-child");
+
+    firstLi.outerHTML = `<li>TypeScript</li>`;
+    console.log(firstLi);
+
+    //remove
+
+    const eles = document.querySelector("li:last-child");
+    eles.remove();
+    console.log(eles);
+  </script>
+</html>
