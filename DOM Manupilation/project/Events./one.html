@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black">
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            id="cassel"
+            src="https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&w=200&h=250&dpr=2"
+            alt="japan monument"
+          />
+        </li>
+        <li>
+          <img
+            id="tree-cassel"
+            src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&cs=tinysrgb&w=200&h=250&dpr=2"
+            alt="japan monument"
+          />
+        </li>
+        <li>
+          <img
+            id="autum-cassel"
+            height="250"
+            width="250"
+            src="https://images.pexels.com/photos/15830265/pexels-photo-15830265/free-photo-of-low-angle-view-of-a-japanese-temple-and-a-tree-in-autumn-foliage.jpeg"
+            alt="japan monument"
+          />
+        </li>
+        <li>
+          <img
+            id="winter-cassel"
+            src="https://images.pexels.com/photos/1654748/pexels-photo-1654748.jpeg?auto=compress&cs=tinysrgb&w=200&h=250&dpr=2"
+            alt="japan monument"
+          />
+        </li>
+        <li><a id="google" href="https://google.com">Google</a></li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // document.getElementById("winter-cassel").onclick = function () {
+    //   alert("you have clicked the winter cassel");
+    // };
+
+    // document.getElementById("winter-cassel").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log(e.timeStamp);
+    //     console.log(e);
+    //     console.log(e.x);
+    //     console.log(e.y);
+    //     console.log(e.shiftKey);
+
+    //     if (e.shiftKey || e.ctrlKey) {
+    //       window.alert("dont press the shift key");
+    //     }
+    //     // alert("you have clicked on it");
+    //   },
+    //   true
+    // );
+
+    //type,timestamp,defaultPrevented,
+    //target,toElement,srcElement, currentTarget
+    //clientX, clientY,screenX, screenY
+    //altKey,ctrlKey,shiftKey,keyCode
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function () {
+    //     console.log("clicked inside the ul");
+    //   },
+    //   false
+    // );
+    // document.getElementById("winter-cassel").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("clicked inside the winter cassle");
+    //     e.stopPropagation();
+    //   },
+    //   false
+    // );
+
+    // document.getElementById("google").addEventListener("click", function (e) {
+    //   console.log("google clicked");
+    //   e.stopPropagation();
+    //   e.preventDefault();
+    // });
+
+    const listElements = document.querySelector("#images").addEventListener(
+      "click",
+      function (e) {
+        console.log(e.target.tagName);
+
+        if (e.target.tagName === "IMG") {
+          const removeIt = e.target.parentNode;
+          removeIt.remove();
+        }
+
+        // removeIt.parentNode.removeChild(removeIt);
+        console.log(e.target.id);
+      },
+      false
+    );
+  </script>
+</html>
