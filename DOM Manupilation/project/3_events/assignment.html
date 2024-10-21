@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Pradeep Sahu JavaScript</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+  </body>
+  <script>
+    const dates = function (str) {
+      console.log(str, Date.now());
+    };
+    var interval = setInterval(dates, 1200, "hello");
+
+    const stopButton = document.querySelector("#stop");
+    stopButton.addEventListener("click", function () {
+      clearInterval(interval);
+      console.log("Stopped button clicked");
+    });
+
+    const startButton = document.querySelector("#start");
+    startButton.addEventListener("click", function () {
+      interval = setInterval(dates, 1200, "hello");
+
+      console.log("Start button clicked");
+    });
+  </script>
+</html>

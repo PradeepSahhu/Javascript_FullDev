@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Pradeep Sahu</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    //handler is a function without name.
+    // set timeout does the thing only once after a certain time.
+
+    const sayMyname = function () {
+      console.log("Pradeep Sahu");
+    };
+
+    const changeText = function () {
+      const name = document.querySelector("h1");
+      name.textContent = "No Name";
+    };
+
+    const changeMe = setTimeout(changeText, 2000);
+
+    // clearTimeout(changeMe);
+
+    const stopButton = document.querySelector("#stop");
+    stopButton.addEventListener("click", function () {
+      clearTimeout(changeMe);
+    });
+
+    // another function i.e. setInterval does thing repeatidly after certain time.
+
+    // setInterval(function () {
+    //   console.log("Pradeep second");
+    // }, 1000);
+  </script>
+</html>
